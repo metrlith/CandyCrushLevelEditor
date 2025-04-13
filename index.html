@@ -7,6 +7,11 @@
         <link rel="icon" href="logo.png">
         <link href="style.css" rel="stylesheet" type="text/css" />
         <script src="https://cdn.jsdelivr.net/npm/underscore@1.12.0/underscore-min.js"></script>
+        <script>
+            if (typeof _ === 'undefined') {
+                document.write('<script src="local/path/to/underscore-min.js"><\/script>');
+            }
+        </script>
         
         <meta content="Flash Level Editor" property="og:title">
         <meta content="Level editor for Candy Crush Saga that can be used to play and create levels, all of that in your browser." property="og:description">
@@ -14,31 +19,40 @@
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
+        <meta name="description" content="Candy Crush Saga Level Editor to create and play levels directly in your browser.">
+        <style>
+            @media (max-width: 768px) {
+                .navbar-button {
+                    width: 100%;
+                    font-size: 0.8em;
+                }
+            }
+        </style>
     </head>
 
     <body>
         <script src="script.js" defer></script>
 
-        <img src="backgrounds/w1_bg.png" id="background" draggable="false"></img>
+        <img src="backgrounds/w1_bg.png" id="background" draggable="false">
 
         <div id="main">
-            <div class="navbar">
+            <nav class="navbar">
                 <div style="display: flex; height: 105%;">
                     <div class="navbarflex">
-                        <button style="border-radius: 10px; background: #00000000; width: 30%; font-size: 1em; margin-left: 1px; color: white; border: 2px solid #00000000; text-align: center; padding: 10px;" onclick="document.getElementById('creditsmenu').style.display = 'block'" style="margin: auto; display: block;" onclick=""></small>Credits & Help</button>
-                        <button style="border-radius: 10px; background: #00000000; width: 40%; font-size: 1em; margin-left: 100px; color: white; border: 2px solid #00000000; text-align: center; padding: 10px;" onclick="window.open('https://discord.gg/pSpFYR666b')" style="margin: auto;  display: block; " onclick="
-                        <button onclick="window.open('https://discord.gg/pSpFYR666b')">CCSFE Discord Server</button>
+                        <button class="button" onclick="document.getElementById('creditsmenu').style.display = 'block'" aria-label="Open Credits and Help">Credits & Help</button>
+                        <button class="button discord" onclick="window.open('https://discord.gg/pSpFYR666b')">Discord Link</button>
+                        <button onclick="window.open('https://discord.gg/UbqaHJFtDq')">CCLE Discord Server</button>
                     </div>
                     <div class="navbarflex">
                     </div>
                     <div class="navbarflex">
                         
-                        <button style="border-radius: 10px; background: #00000000; width: 30%; font-size: 1em; margin-left: -99px; color: white; border: 2px solid #00000000; text-align: center; padding: 10px;" onclick="window.open('https://wonkaccs.github.io/CandyCrushSagaFE/?levelCode=' + JSON.stringify(exportLevel()), '_blank')">▶ Play</button>
+                        <button class="button play" onclick="window.open('https://wonkaccs.github.io/CandyCrushSagaFE/?levelCode=' + JSON.stringify(exportLevel()), '_blank')">▶ Play</button>
                         <button style="border-radius: 10px; background: #00000000; width: 30%; font-size: 1em; margin-top: 0px; color: white; border: 2px solid #00000000; text-align: center; padding: 10px;" onclick="window.open('https://wonkaccs.github.io/CandyCrushSagaFEVanilla/?levelCode=' + JSON.stringify(exportLevel()), '_blank')">▶ Play in Vanilla</button>                        <button style="border-radius: 10px; background: #00000000; width: 30%; font-size: 1em; margin-top: 0px; color: white; border: 2px solid #00000000; text-align: center; padding: 10px;" onclick="exportLevelUI()">⏏ Export Level</button>
-                        <button style="border-radius: 10px; background: #00000000; width: 30%; font-size: 1em; margin-left: 0px; color: white; border: 2px solid #00000000; text-align: center; padding: 10px;" onclick="displayImportLevelUI()"><small>⤵</small> Import Level</button>
+                        <button style="border-radius: 10px; background: #00000000; width: 30%; font-size: 1em; margin-left: 0px; color: white; border: 2px solid #00000000; text-align: center; padding: 10px;" onclick="displayImportLevelUI()"><small>⤵</small>⤓ Import Level</button>
                     </div>
                 </div>
-            </div>
+            </nav>
             <div class="sideselectionright">
                 <div class="sidetitle">
                     <p class='BananaSplit' style="color: rgb(255, 255, 255); text-align: center;">Level:</p>
@@ -48,55 +62,46 @@
                     <label for="movesoption" class="leveltypelabel" style="margin: 5px;" onclick="selectMode()">
                         <img src="ui/playmode_icon_moves.png" style="max-width: 30px; max-height: 30px;">
                         
-                        <!-- <label class='DroidSans' style="color: white; text-align: center;">Moves</label> -->
                         <input type="radio" id="movesoption" name="leveltype" value="Classic moves" checked>
-                    </label>
+                    </div>
                     <label class="leveltypelabel" for="jellyoption" style="margin: 5px;" onclick="selectMode()">
                         <img src="ui/playmode_icon_jelly.png" style="max-width: 30px; max-height: 30px;">
                         
-                        <!-- <label class='DroidSans' style="color: white; text-align: center;">Jelly</label> -->
                         <input type="radio" id="jellyoption" name="leveltype" value="Light up">
                     </label>
                     <label class="leveltypelabel" for="ingredientsoption" style="margin: 5px;" onclick="selectMode()">
                         <img src="ui/playmode_icon_drop.png" style="max-width: 30px; max-height: 30px;">
                         
-                        <!-- <label class='DroidSans' style="color: white; text-align: center;">Ingredients</label> -->
                         <input type="radio" id="ingredientsoption" name="leveltype" value="Drop down">
                     </label>
                     <label class="leveltypelabel" for="orderoption" style="margin: 5px;" onclick="selectMode()">
                         <img src="ui/playmode_icon_order.png" style="max-width: 30px; max-height: 30px;">
                         
-                        <!-- <label class='DroidSans' style="color: white; text-align: center;">Order</label> -->
                         <input type="radio" id="orderoption" name="leveltype" value="Order">
                     </label>
                     <label class="leveltypelabel" for="timedoption" style="margin: 5px;" onclick="selectMode()">
                         <img src="ui/playmode_icon_time.png" style="max-width: 30px; max-height: 30px;">
                         
-                        <!-- <label class='DroidSans' style="color: white; text-align: center;">Timed</label> -->
                         <input type="radio" id="timedoption" name="leveltype" value="Classic">
                     </label>
                     <label class="leveltypelabel" for="jellyorderoption" style="margin: 5px;" onclick="selectMode()">
                         <img src="ui/playmode_icon_jellyorder.png" style="max-width: 30px; max-height: 30px;">
                         
-                        <!-- <label class='DroidSans' style="color: white; text-align: center;">Jelly Order</label> -->
                         <input type="radio" id="jellyorderoption" name="leveltype" value="Jelly Order">
                     </label>
                     <label class="leveltypelabel" for="jellyingredientsoption" style="margin: 5px;" onclick="selectMode()">
                         <img src="ui/playmode_icon_jellydrop.png" style="max-width: 30px; max-height: 30px;">
                         
-                        <!-- <label class='DroidSans' style="color: white; text-align: center;">Jelly Ingredients</label> -->
                         <input type="radio" id="jellyingredientsoption" name="leveltype" value="Jelly Drop down">
                     </label>
                     <label class="leveltypelabel" for="orderingredientsoption" style="margin: 5px;" onclick="selectMode()">
                         <img src="ui/playmode_icon_orderdrop.png" style="max-width: 30px; max-height: 30px;">
                         
-                        <!-- <label class='DroidSans' style="color: white; text-align: center;">Order Ingredients</label> -->
                         <input type="radio" id="orderingredientsoption" name="leveltype" value="Order Drop">
                     </label>
                     <label class="leveltypelabel" for="jellytimeoption" style="margin: 5px;" onclick="selectMode()">
                         <img src="ui/playmode_icon_jellytime.png" style="max-width: 30px; max-height: 30px;">
                         
-                        <!-- <label class='DroidSans' style="color: white; text-align: center;"><s>Jelly Time</s></label> -->
                         <input type="radio" id="jellytimeoption" name="leveltype" value="Jelly Time">
                     </label>
 <!-- 
@@ -115,23 +120,18 @@
                     <label class="leveltypelabel" for="jellycolortime" style="margin: 5px;" onclick="selectMode()">
                         <img src="ui/playmode_icon_jellycolortime.png" style="max-width: 30px; max-height: 30px;">
                         
-                        <!--  <label class='DroidSans' style="color: white; text-align: center;"><s>Drop Time</s></label> -->
                         <input type="radio" id="jellycolortime" name="leveltype" value="Jelly Color Time">
                     </label>
-
-                </label>
 
                 <label class="leveltypelabel" for="supermixedoption" style="margin: 5px;" onclick="selectMode()">
                     <img src="ui/playmode_icon_super_mixed.png" style="max-width: 30px; max-height: 30px;">
                     
-                    <!--  <label class='DroidSans' style="color: white; text-align: center;"><s>Drop Time</s></label> -->
                     <input type="radio" id="supermixedoption" name="leveltype" value="Super Mix">
                 </label>
 
                 <label class="leveltypelabel" for="jellycolor" style="margin: 5px;" onclick="selectMode()">
                     <img src="ui/playmode_icon_jelly_color.png" style="max-width: 30px; max-height: 30px;">
                     
-                    <!--  <label class='DroidSans' style="color: white; text-align: center;"><s>Drop Time</s></label> -->
                     <input type="radio" id="jellycolor" name="leveltype" value="Jelly Color">
                 </label>
 
@@ -139,7 +139,6 @@
                 <label class="leveltypelabel" for="regularjellycolor" style="margin: 5px;" onclick="selectMode()">
                     <img src="ui/playmode_icon_jellycolorregular.png" style="max-width: 30px; max-height: 30px;">
                     
-                    <!--  <label class='DroidSans' style="color: white; text-align: center;"><s>Drop Time</s></label> -->
                     <input type="radio" id="regularjellycolor" name="leveltype" value="Multi Jelly">
                 </label>
 
@@ -147,7 +146,6 @@
                 <label class="leveltypelabel" for="jellycolordrop" style="margin: 5px;" onclick="selectMode()">
                     <img src="ui/playmode_icon_jellycolordrop.png" style="max-width: 30px; max-height: 30px;">
                     
-                    <!--  <label class='DroidSans' style="color: white; text-align: center;"><s>Drop Time</s></label> -->
                     <input type="radio" id="jellycolordrop" name="leveltype" value="Jelly Color Drop">
                 </label>
 
@@ -155,7 +153,6 @@
                 <label class="leveltypelabel" for="jellycolororder" style="margin: 5px;" onclick="selectMode()">
                     <img src="ui/playmode_icon_jellycolororder.png" style="max-width: 30px; max-height: 30px;">
                     
-                    <!--  <label class='DroidSans' style="color: white; text-align: center;"><s>Drop Time</s></label> -->
                     <input type="radio" id="jellycolororder" name="leveltype" value="Jelly Color Order">
                 </label>
 
@@ -177,12 +174,12 @@
                 
                 <div class="sideoptions" id="time-section" style="display: none;">
                     <label for="time" class='BananaSplit' style="margin: 10px; display: block; color: white; text-align: center;">Time (seconds):</label>
-                    <input style="width: 50px; text-align: center;" placeholder="30" type="number" name="moves" id="time" name="time"><br>
+                    <input style="width: 50px; text-align: center;" placeholder="30" type="number" id="time" name="time"><br>
                 </div>
 
                 <div class="sideoptions" id="frogstomachsize-section">
                     <label for="frogstomachsize" class='BananaSplit' style="margin: 10px; display: block; color: white; text-align: center;">Frog Stomach Size:</label>
-                    <input style="width: 50px; text-align: center;" placeholder="0" type="number" name="frogstomachsize" id="frogstomachsize" name="frogstomachsize"><br>
+                    <input style="width: 50px; text-align: center;" placeholder="0" type="number" id="frogstomachsize" name="frogstomachsize"><br>
                 </div>
                 <div class="sideoptions" id="colorspref-section">
                     <p class='BananaSplit break' style="margin: auto; display: block; color: white; text-align: center;">Preferred Colors:</p>
@@ -336,7 +333,7 @@
                         <input type="number" style="margin-left: 40%; width: 20%; text-align: center;" id="evilSpawnerAmount" placeholder="0" title="Max Spawned Blockers">
                         <div class="break"></div>
                         <p class='BananaSplit' style="margin: 10px; display: block; color: white; text-align: center;">Spawn Interval:</p>
-                        <input type="number" style="margin-left: 40%; width: 20%; text-align: center;"" id="evilSpawnerInterval" placeholder="0" title="Spawn Interval">
+                        <input type="number" style="margin-left: 40%; width: 20%; text-align: center;" id="evilSpawnerInterval" placeholder="0" title="Spawn Interval">
                         <div class="break"></div>
                         <button style="margin-right: auto; margin-left: auto; margin-bottom: 15px; margin-top: 15px; display: block; height: 47px; padding: 5px 20px; font-size: 16px; font-weight: normal; font-family: 'BananaSplit', sans-serif; color: white; background: repeating-linear-gradient(45deg, #333333, #333333 10px, #2b2b2b 10px, #2b2b2b 20px); border: 2px solid #232323; border-radius: 5px; box-shadow: 0 4px 6px rgb(0, 0, 0); cursor: pointer; transition: all 0.3s ease;" onclick="addMixerOption()" id="addmixer">Add Mixer Blocker</button>
 
@@ -644,7 +641,7 @@
                 <textarea id="importfield" name="importfield" style="background: repeating-linear-gradient(45deg, #1d203f, #1d203f 10px, #15162e 10px, #15162e 20px); border: 2px solid #404479; width: 90%; height: 70%; resize: none; color: white; margin-top: 20px;"></textarea>
                 <div class="break"></div>
                 <button onclick="importLevelUI()" 
-                <p class="BananaSplit" id="importbutton" 
+                    class="BananaSplit" id="importbutton" 
                     style="margin-right: auto; margin-left: auto; display: block; height: 47px; padding: 10px 20px; font-size: 1.1em; font-weight: normal; font-family: 'BananaSplit', sans-serif; color: white; background: repeating-linear-gradient(45deg, #333333, #333333 10px, #2b2b2b 10px, #2b2b2b 20px); border: 2px solid #232323; border-radius: 5px; box-shadow: 0 4px 6px rgb(0, 0, 0); text-align: center; width: 30%; cursor: pointer; transition: all 0.3s ease; margin-top: 10px;">Import Level</button>
 
                 <div class="break"></div>
@@ -656,15 +653,15 @@
         <div id="creditsmenu" style="display: none;">
             <div class="popup" style="height: 90%; width: 40%; left: 30%; position: fixed; top: 50%; transform: translateY(-50%); background: repeating-linear-gradient(45deg, #404479, #404479 10px, #30335c 10px, #30335c 20px); padding: 20px; border-radius: 10px; box-shadow: 0 20px 10px rgba(0, 0, 0, 0.5);">
                 <button onclick="document.getElementById('creditsmenu').style.display = 'none'" style="position: absolute; right: 20px; top: 20px; border-radius: 50%; background-color: #00000090; width: 35px; height: 35px; font-size: 1.2em; color: white; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center;">✖</button>
-                <p class='BananaSplit' style="margin: 0; width: 80%; height: 20px; border-radius: 0px; background-color: padding: 10px; display: block; color: white; text-align: center; font-size: 1.5em;">Candy Crush Level Editor Credits:</p>
-                <p class="BananaSplit" style="color: lightcoral; width: fit-content; height: fit-content; text-align: center; font-size: 1.2em;">All right go to King Limited. <br>This editor is running: Version 1.9 Flash Extended</p>
+                <p class='BananaSplit' style="margin: 0; width: 80%; height: 20px; border-radius: 0px; background-color: transparent; display: block; color: white; text-align: center; font-size: 1.5em;">Candy Crush Level Editor Credits:</p>
+                <p class="BananaSplit" style="color: lightcoral; width: fit-content; height: fit-content; text-align: center; font-size: 1.2em;">All rights go to King Limited. <br>This editor is running: Version 2.0 Flash Extended</p>
                 <p class="BananaSplit" style="color:honeydew; width: 80%; text-align: center; vertical-align: middle; border-radius: 0px; display: inline-block; font-size: 1.1em;">
-                <br>This editor was made by Blaki and then edited by Fence, Ender_Pearl, fuffy7057 Xenon. You may feel free to fork it and do what you like with it as long as you credit Blaki and King.<br><br>To use blockers, use the pink sticky note at the end of the blockers section for every static blocker. This does not include Licorice Swirls and Locks. <br><br>To use Candy Cannons you need to know that the Maximum means the maximum amount of items there can be on the board. The Interval means that if you reached the maximum, and let's say the interval is two, the game will spawn another single unit of that item after two moves.<br>To use teleporters, place a pink teleporter note on the exit teleporter and a blue one on the entry teleporter.<br>ㅤ
+                <br>This editor was made by Blaki and Metr. You may feel free to fork it and do what you like with it as long as you credit Blaki and Metr.<br><br>To use blockers, use the pink sticky note at the end of the blockers section for every static blocker. This does not include Licorice Swirls and Locks. <br><br>To use Candy Cannons, you need to know that Maximum means the maximum amount of items there can be on the board. Interval means that if you reached the maximum, and let's say the interval is two, the game will spawn another single unit of that item after two moves.<br>To use teleporters, place a pink teleporter note on the exit teleporter and a blue one on the entry teleporter.<br>ㅤ
                 </p>
                 <div class="break"></div>
                 <div class="break"></div>
-                <p style="color:hsl(36, 100%, 84%); width: 80%; text-align: center;">Come join the server to share your levels!</p>
-                <button onclick="window.open('https://discord.gg/ZrKGprP7wp')" style="margin-right: auto; margin-left: auto; display: block; height: 47px; padding: 10px 20px; font-size: 16px; font-weight: normal; font-family: 'BananaSplit', sans-serif; color: white; background: repeating-linear-gradient(45deg, #333333, #333333 10px, #2b2b2b 10px, #2b2b2b 20px); border: 2px solid #232323; border-radius: 5px; box-shadow: 0 4px 6px rgb(0, 0, 0); cursor: pointer; transition: all 0.3s ease;">Candy Crush Custom Levels Hub</button>
+                <p style="color:hsl(36, 100%, 84%); width: 80%; text-align: center;">Come join our server to share your levels and get support!</p>
+                <button onclick="window.open('https://discord.gg/UbqaHJFtDq')" style="margin-right: auto; margin-left: auto; display: block; height: 47px; padding: 10px 20px; font-size: 16px; font-weight: normal; font-family: 'BananaSplit', sans-serif; color: white; background: repeating-linear-gradient(45deg, #333333, #333333 10px, #2b2b2b 10px, #2b2b2b 20px); border: 2px solid #232323; border-radius: 5px; box-shadow: 0 4px 6px rgb(0, 0, 0); cursor: pointer; transition: all 0.3s ease;">Candy Crush Custom Levels Hub</button>
 
 
                 <div class="break"></div>
@@ -675,3 +672,4 @@
             </div>
         </div>
     </body>
+</html>

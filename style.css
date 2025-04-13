@@ -28,6 +28,9 @@ img[src=""] {
     --color-dark: #1d203f;
     --color-dream: #873ee6;
     --color-dream-dark: #702bb1;
+    --button-bg: transparent;
+    --button-border: transparent;
+    --button-color: white;
 }
 
 .break {
@@ -460,6 +463,18 @@ img[src="elements/cake_top_right.png"], img[src="elements/cake_bottom_right.png"
     z-index: 6;
   }
 
+.navbar-button {
+    border-radius: 10px;
+    background: transparent;
+    width: 30%;
+    font-size: 1em;
+    margin-left: 1px;
+    color: white;
+    border: 2px solid transparent;
+    text-align: center;
+    padding: 10px;
+}
+
 #level .ingredients_exit {
     position: absolute;
     max-width: 32px !important;
@@ -655,4 +670,10 @@ img[src="elements/cake_top_right.png"], img[src="elements/cake_bottom_right.png"
     right: 0;
     text-align: center;
     z-index: 1;
+}
+
+.button {
+    background: var(--button-bg);
+    border: 2px solid var(--button-border);
+    color: var(--button-color);
 }

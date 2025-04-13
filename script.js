@@ -1488,3 +1488,7 @@ function initializeElement(element, type, attributes) {
     button.addEventListener("click", () => updateSelection(button, attributes.elementName, attributes.layer));
     element.replaceWith(button);
 }
+
+document.getElementById('credits-button').addEventListener('click', () => {
+    document.getElementById('creditsmenu').style.display = 'block';
+});
