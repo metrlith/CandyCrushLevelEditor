@@ -1,6 +1,6 @@
 # Candy Crush Level Editor
 
-A web-based level editor for Candy Crush, packed with features to create and edit levels efficiently.
+Welcome to the **Candy Crush Level Editor**! This project allows you to create and customize levels for the popular Candy Crush game. The editor provides an intuitive drag-and-drop interface, enabling you to design levels with various candies, obstacles, and boosters. Works with Candy Crush Web Player, too!
 
 ## Table of Contents
 - [Features](#features)
@@ -15,8 +15,8 @@ A web-based level editor for Candy Crush, packed with features to create and edi
 
 ## Features
 - **Intuitive drag-and-drop interface**: Easily design levels by dragging and dropping candies, obstacles, and boosters.
-- **Support for various Candy Crush game mechanics**: Includes features like special candies, blockers, and cascading effects.
-- **Custom themes and assets**: Import your own assets to create unique level designs.
+- **Support for various Candy Crush game mechanics**: Includes features like special candies, blockers, and candy cannons.
+- **Customizable level parameters**: Adjust the number of moves, score targets, and other level settings.
 - **Real-time preview**: See how your level will look and behave in the game as you design it.
 - **Export and import**: Save your levels as JSON files and reload them for further editing.
 
@@ -28,7 +28,9 @@ This project is built using the following technologies:
 - **[Python](https://www.python.org/)**: Powers the backend for saving and loading levels.
 
 ## Getting Started
-Candy Crush Level Editor relies on Adobe Flash Player, which was discontinued in December 2020. However, you can still download it from archived sources. Follow these steps to set up the project locally:
+Candy Crush Level Editor relies on Adobe Flash Player, which was discontinued in December 2020. However, you can still download it from archived sources.
+
+Unlike it's said in [this](#candy-crush-level-editor) section, both the Editor and the Web Player relies on themselves to work together. So you will need to **fork both repositories** to make it work. Both work with GitHub Deployment, so you can host them on GitHub Pages.
 
 ### Prerequisites
 To run the Candy Crush Level Editor, you will need to manually download and set up the following:
@@ -55,8 +57,13 @@ To run the Candy Crush Level Editor, you will need to manually download and set 
 3. Install any required dependencies (if applicable).
 
 ### Running the Application
-1. Open the project in your preferred IDE or text editor.
-2. Launch the application by opening the `index.html` file in WaterFox Classic.
+WARNING: This application is not compatible with modern browsers due to the discontinuation of Flash Player. You must use WaterFox Classic with Flash Player installed. Read this [section](#getting-started) for more information.
+
+1. Go to your repository on GitHub.
+2. Navigate to the **Settings** tab.
+3. Scroll down to the **Pages** section.
+4. Under **Source**, select the branch you want to deploy (e.g., `main`) and click **Save**.
+5. GitHub will generate a URL for your deployed page. Use this URL to access the application in your browser.
 
 ## Contributing
 Contributions are welcome! Here's how you can contribute:
