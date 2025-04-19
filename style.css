@@ -19,21 +19,19 @@ img[src=""] {
     position: relative;
     top: 0;
     left: 0;
-
-    background-color: var(--primary-color);
     
 }
 
 :root {
     --scaleWidth: 12;
     --scaleHeight: 1;
-    --primary-color: #ff9800;
-    --secondary-color: #8d6e63;
-    --accent-color: #4caf50;
-    --text-color: #ffffff;
-    --highlight-color: #ff5722;
-    --button-bg: repeating-linear-gradient(45deg, #37474f, #37474f 10px, #263238 10px, #263238 20px);
-    --button-border: #212121;
+    --primary-color: #404479; /* Main background color */
+    --secondary-color: #30335c; /* Secondary background color */
+    --accent-color: #333333; /* Accent color */
+    --text-color: white; /* Text color */
+    --highlight-color: lightcoral; /* Highlight color */
+    --button-bg: repeating-linear-gradient(45deg, #333333, #333333 10px, #2b2b2b 10px, #2b2b2b 20px);
+    --button-border: #232323;
 }
 
 .break {
@@ -90,6 +88,7 @@ td .candy_cannon {
     user-select: none;
 }
 
+/* KEEP THIS IT REMOVES THE SCROLLBARS AND MAKES THE SITE LOOK BETTER */
 * {
     scrollbar-width: none; 
     -ms-overflow-style: none; 
