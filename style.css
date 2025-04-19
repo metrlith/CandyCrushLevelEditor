@@ -25,6 +25,13 @@ img[src=""] {
 :root {
     --scaleWidth: 12;
     --scaleHeight: 1;
+    --primary-color: #404479; /* Main background color */
+    --secondary-color: #30335c; /* Secondary background color */
+    --accent-color: #333333; /* Accent color */
+    --text-color: white; /* Text color */
+    --highlight-color: lightcoral; /* Highlight color */
+    --button-bg: repeating-linear-gradient(45deg, #333333, #333333 10px, #2b2b2b 10px, #2b2b2b 20px);
+    --button-border: #232323;
 }
 
 .break {
@@ -698,4 +705,35 @@ img[src="elements/cake_top_right.png"], img[src="elements/cake_bottom_right.png"
     right: 0;
     text-align: center;
     z-index: 1;
+}
+
+.credits-title {
+    margin: 0;
+    width: 80%;
+    height: 20px;
+    border-radius: 0px;
+    background-color: var(--primary-color);
+    padding: 10px;
+    display: block;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.support-button {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    height: 47px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'BananaSplit', sans-serif;
+    color: var(--text-color);
+    background: var(--button-bg);
+    border: 2px solid var(--button-border);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
