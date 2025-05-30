@@ -2,10 +2,10 @@
 
 ![Candy Crush Level Editor Banner](banner.png)
 
-Welcome to the Candy Crush Level Editor! This tool allows you to create and edit custom levels for yourself. It works with the [Candy Crush Web Player](https://github.com/tp-duolingo/CandyCrushWebPlayer) and is designed to be user-friendly and easy to use.
+Welcome to the Candy Crush Level Editor! This tool allows you to create and edit custom levels for yourself. It works with the [Candy Crush Web Player](https://github.com/metrlith/CandyCrushWebPlayer) and is designed to be user-friendly and easy to use.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![GitHub stars](https://img.shields.io/github/stars/tp-duolingo/CandyCrushLevelEditor)
+![GitHub stars](https://img.shields.io/github/stars/metrlith/CandyCrushLevelEditor)
 
 ## Table of Contents
 
@@ -31,9 +31,9 @@ Welcome to the Candy Crush Level Editor! This tool allows you to create and edit
 Follow these steps to start creating your own Candy Crush levels:
 
 1. Set up your environment by following the [Requirements](#requirements) section.
-2. Visit the [Candy Crush Level Editor](https://tp-duolingo.github.io/CandyCrushLevelEditor/).
+2. Visit the [Candy Crush Level Editor](https://metrlith.github.io/CandyCrushLevelEditor/).
 3. Start creating, importing, or exporting levels.
-4. Play your custom levels using the [Candy Crush Web Player](https://github.com/tp-duolingo/CandyCrushWebPlayer).
+4. Play your custom levels using the [Candy Crush Web Player](https://github.com/metrlith/CandyCrushWebPlayer).
 
 ## Requirements
 
@@ -65,12 +65,12 @@ Follow these steps to set up your environment:
 
 ## How To Use
 
-1. Go to <https://tp-duolingo.github.io/CandyCrushLevelEditor/>.
+1. Go to <https://metrlith.github.io/CandyCrushLevelEditor/>.
 2. Use the interface to create your level. Customize parameters such as grid size, candy types, and objectives.
 3. Import or export levels as needed:
    - **Import**: Click the "Import" button and upload a level from a JSON text.
    - **Export**: Click the "Export" button to save your design as a JSON text.
-4. Play your custom levels using the [Candy Crush Web Player](https://github.com/tp-duolingo/CandyCrushWebPlayer).
+4. Play your custom levels using the [Candy Crush Web Player](https://github.com/metrlith/CandyCrushWebPlayer).
 5. Save your progress locally to continue editing later.
 
 ## Known Issues
