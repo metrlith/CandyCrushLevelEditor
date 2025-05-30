@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/" # Adjust if your package.json is in a subdirectory
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "pip"
+    directory: "/" # Adjust if your requirements.txt or pyproject.toml is in a subdirectory
+    schedule:
+      interval: "daily"
