@@ -1,6 +1,6 @@
 # Candy Crush Level Editor
 
-![Candy Crush Level Editor Banner](banner.png)
+![Candy Crush Level Editor Banner](assets/banner.png)
 
 Welcome to the Candy Crush Level Editor! This tool allows you to create and edit custom levels for yourself. It works with the [Candy Crush Web Player](https://github.com/metrlith/CandyCrushWebPlayer) and is designed to be user-friendly and easy to use.
 
