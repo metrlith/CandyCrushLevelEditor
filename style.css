@@ -25,11 +25,11 @@ img[src=""] {
 :root {
     --scaleWidth: 12;
     --scaleHeight: 1;
-    --primary-color: #404479; /* Main background color */
-    --secondary-color: #30335c; /* Secondary background color */
-    --accent-color: #333333; /* Accent color */
-    --text-color: white; /* Text color */
-    --highlight-color: lightcoral; /* Highlight color */
+    --primary-color: #404479;
+    --secondary-color: #30335c;
+    --accent-color: #333333;
+    --text-color: white;
+    --highlight-color: lightcoral;
     --button-bg: repeating-linear-gradient(45deg, #333333, #333333 10px, #2b2b2b 10px, #2b2b2b 20px);
     --button-border: #232323;
 }
@@ -88,7 +88,6 @@ td .candy_cannon {
     user-select: none;
 }
 
-/* KEEP THIS IT REMOVES THE SCROLLBARS AND MAKES THE SITE LOOK BETTER */
 * {
     scrollbar-width: none; 
     -ms-overflow-style: none; 
@@ -295,8 +294,6 @@ img[src="elements/cake_top_right.png"], img[src="elements/cake_bottom_right.png"
     z-index: 3;
 }
 
-
-
 .sideselection {
     height: 95%; 
     width: 20%; 
@@ -313,8 +310,6 @@ img[src="elements/cake_top_right.png"], img[src="elements/cake_bottom_right.png"
       );
     overflow-x: hidden; 
   }
-
-  
 
   .sideoptions {
     text-align:center;
@@ -408,7 +403,6 @@ img[src="elements/cake_top_right.png"], img[src="elements/cake_bottom_right.png"
     box-shadow: 0 1.5px 0 black; 
 }
 
-
 .dropped button, .preferred{
     background-color: transparent;
     border: none;
@@ -485,8 +479,6 @@ img[src="elements/cake_top_right.png"], img[src="elements/cake_bottom_right.png"
     max-width:58px !important;
     max-height:50px !important;
 }
-
-
 
 .navbar {
     overflow: hidden;
