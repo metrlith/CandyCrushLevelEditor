@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+>
+> Hi, thanks for your interest! This repository has been merged with the [Candy Crush Forever!](https://github.com/metrlith/CandyCrushForever) repository.
+
+
 # Candy Crush Level Editor
 
 ![Candy Crush Level Editor Banner](assets/banner.png)
